@@ -104,7 +104,8 @@ class Jarvis(CmdInterpreter, object):
                 + Fore.RESET)
             self.first_reaction = False
         if self.enable_voice:
-            self.speech.text_to_speech("What can I do for you?\n")
+            if self.first_reaction:
+                self.speech.text_to_speech("What can I do for you?\n")
 
     def speak(self, text=None):
         if text is None:
